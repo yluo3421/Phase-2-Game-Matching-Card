@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Login from "./Login";
-import LeaderBoard from "./LeaderBorad";
+import LeaderBoard from "./LeaderBoard";
 import NavBar from "./NavBar";
 
 function App(){
