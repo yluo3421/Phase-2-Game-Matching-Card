@@ -1,0 +1,94 @@
+{
+    "mahjong":[
+        {
+            "id": 1,
+            "name": "Pin9",
+            "image": "https://raw.githubusercontent.com/FluffyStuff/riichi-mahjong-tiles/9e2eba21ca69d6cd5cdd9a309d5754ac9517c481/Regular/Pin9.svg"
+        }, 
+        {
+            "id": 2,
+            "name": "Man2",
+            "image": "https://raw.githubusercontent.com/FluffyStuff/riichi-mahjong-tiles/9e2eba21ca69d6cd5cdd9a309d5754ac9517c481/Regular/Man2.svg"
+        }, 
+        {
+            "id": 3,
+            "name": "Sou6",
+            "image": "https://raw.githubusercontent.com/FluffyStuff/riichi-mahjong-tiles/9e2eba21ca69d6cd5cdd9a309d5754ac9517c481/Regular/Sou6.svg"
+        },
+        {
+            "id": 4,
+            "name": "Shaa",
+            "image": "https://raw.githubusercontent.com/FluffyStuff/riichi-mahjong-tiles/9e2eba21ca69d6cd5cdd9a309d5754ac9517c481/Regular/Shaa.svg"
+        }, 
+        {
+            "id": 5,
+            "name": "Ton",
+            "image": "https://raw.githubusercontent.com/FluffyStuff/riichi-mahjong-tiles/9e2eba21ca69d6cd5cdd9a309d5754ac9517c481/Regular/Ton.svg"
+        }, 
+        {
+            "id": 6,
+            "name": "Pei",
+            "image": "https://raw.githubusercontent.com/FluffyStuff/riichi-mahjong-tiles/9e2eba21ca69d6cd5cdd9a309d5754ac9517c481/Regular/Pei.svg"
+        },         
+        {
+            "id": 7,
+            "name": "Pin2",
+            "image": "https://raw.githubusercontent.com/FluffyStuff/riichi-mahjong-tiles/9e2eba21ca69d6cd5cdd9a309d5754ac9517c481/Regular/Pin2.svg"
+        }, 
+        {
+            "id": 8,
+            "name": "Man8",
+            "image": "https://raw.githubusercontent.com/FluffyStuff/riichi-mahjong-tiles/9e2eba21ca69d6cd5cdd9a309d5754ac9517c481/Regular/Man8.svg"
+        }, 
+        {
+            "id": 9,
+            "name": "Pin5",
+            "image": "https://raw.githubusercontent.com/FluffyStuff/riichi-mahjong-tiles/9e2eba21ca69d6cd5cdd9a309d5754ac9517c481/Regular/Pin5-Dora.svg"
+        },         
+        {
+            "id": 10,
+            "name": "Man5",
+            "image": "https://raw.githubusercontent.com/FluffyStuff/riichi-mahjong-tiles/9e2eba21ca69d6cd5cdd9a309d5754ac9517c481/Regular/Man5-Dora.svg"
+        }, 
+        {
+            "id": 11,
+            "name": "Hatsu",
+            "image": "https://raw.githubusercontent.com/FluffyStuff/riichi-mahjong-tiles/9e2eba21ca69d6cd5cdd9a309d5754ac9517c481/Regular/Hatsu.svg"
+        }, 
+        {
+            "id": 12,
+            "name": "Sou5",
+            "image": "https://raw.githubusercontent.com/FluffyStuff/riichi-mahjong-tiles/9e2eba21ca69d6cd5cdd9a309d5754ac9517c481/Regular/Sou5-Dora.svg"
+        },         
+        {
+            "id": 13,
+            "name": "Nan",
+            "image": "https://raw.githubusercontent.com/FluffyStuff/riichi-mahjong-tiles/9e2eba21ca69d6cd5cdd9a309d5754ac9517c481/Regular/Nan.svg"
+        }, 
+        {
+            "id": 14,
+            "name": "Sou8",
+            "image": "https://raw.githubusercontent.com/FluffyStuff/riichi-mahjong-tiles/9e2eba21ca69d6cd5cdd9a309d5754ac9517c481/Regular/Sou8.svg"
+        }, 
+        {
+            "id": 15,
+            "name": "Pin1",
+            "image": "https://raw.githubusercontent.com/FluffyStuff/riichi-mahjong-tiles/9e2eba21ca69d6cd5cdd9a309d5754ac9517c481/Regular/Pin1.svg"
+        },         
+        {
+            "id": 16,
+            "name": "Pin7",
+            "image": "https://raw.githubusercontent.com/FluffyStuff/riichi-mahjong-tiles/9e2eba21ca69d6cd5cdd9a309d5754ac9517c481/Regular/Pin7.svg"
+        }, 
+        {
+            "id": 17,
+            "name": "Sou7",
+            "image": "https://raw.githubusercontent.com/FluffyStuff/riichi-mahjong-tiles/9e2eba21ca69d6cd5cdd9a309d5754ac9517c481/Regular/Sou7.svg"
+        }, 
+        {
+            "id": 18,
+            "name": "Sou1",
+            "image": "https://raw.githubusercontent.com/FluffyStuff/riichi-mahjong-tiles/9e2eba21ca69d6cd5cdd9a309d5754ac9517c481/Regular/Sou1.svg"
+        }
+    ]
+}
