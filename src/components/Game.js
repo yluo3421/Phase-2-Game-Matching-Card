@@ -5,6 +5,9 @@ import Card from './Card'
 function Game() {
 
   const [tiles, setTiles]=useState([])
+  const [flippedTile, setFlippedTile]=useState([])
+  // const [isFlipped, setIsFlipped]=useState(false)
+  const emptyState = [];
   
 
   useEffect(()=>
@@ -12,14 +15,42 @@ function Game() {
     fetch('http://localhost:3001/mahjong')
     .then(response => response.json())
     .then(data => {
-      setTiles(data)
+      setTiles(shuffleCards(data.concat(data)))
       
     });
   }, [])
 
-  
+
+  // function handleFlippedCounter(){
+  //     setFlippedCounter((flippedCounter)=>flippedCounter+1)
+  // }
+  // console.log(flippedCounter)
 
   // this method create random array of cards to be used
+
+  function handleClick(id){
+
+    setFlippedTile((flippedTile)=>[...flippedTile, id])
+    // console.log(flippedTile)
+
+    if (flippedTile.length===2){
+      if (flippedTile[0]===flippedTile[1]){
+        console.log('yyaayy')
+
+      }
+      
+      setFlippedTile([id])
+      console.log(flippedTile + "on changeing to empty")
+      
+    }
+    
+  }
+  
+
+
+
+  
+
   function shuffleCards(array) {
     const length = array.length;
     for (let i = length; i > 0; i--) {
@@ -32,23 +63,28 @@ function Game() {
     return array;
   }
 
-  let randomCards = shuffleCards(tiles.concat(tiles))
+  // let randomCards = shuffleCards(tiles.concat(tiles))
   //console.log(randomCards);
 
-  function handleTileClick() {
+  // function handleTileClick() {
+  //     setIsFlipped(!isFlipped)
+  //     handleFlippedCounter()
+  // }
 
-  }
+
   
   return (
     <div className="gamePage">
       <h1>Play Card Matching Game!</h1>
       <div className='container'>
-          {randomCards.map((tile, index)=>{
+          {tiles.map((tile, index)=>{
             return <Card 
               key={index} 
               tile={tile}
               index={index}
-              onClick={handleTileClick}
+              onClick={handleClick}
+              // handleFlippedCounter={handleFlippedCounter}
+              // isFlipped={isFlipped}
             />})
           }
       </div>
