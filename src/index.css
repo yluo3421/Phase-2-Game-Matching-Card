@@ -34,8 +34,10 @@ ol {
   grid-template-rows: repeat(6, 1fr);
   justify-items:center;
   gap: 2rem;
+
   
   width: 420px;
+
   height: 500px;
   perspective: 100%;
   max-width: 720px;
