@@ -1,9 +1,11 @@
 import React from "react";
 
-function Card({tile, onClick, flipped}){
+function Card({tile, onClick, flipped, isDisabled}){
 
     function handleClick(){
-        onClick(tile)
+        if(!isDisabled){
+            onClick(tile)
+    }
     }
     const backTile="https://raw.githubusercontent.com/FluffyStuff/riichi-mahjong-tiles/9e2eba21ca69d6cd5cdd9a309d5754ac9517c481/Regular/Front.svg"
     return (
