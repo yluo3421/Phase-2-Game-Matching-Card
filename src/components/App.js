@@ -3,7 +3,6 @@ import { Route, Switch } from "react-router-dom";
 import Game from "./Game";
 import Login from "./Login";
 import LeaderBoard from "./LeaderBoard";
-import NavBar from "./NavBar";
 import Home from "./Home"
 
 function App(){

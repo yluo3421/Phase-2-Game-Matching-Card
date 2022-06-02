@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from "react";
 import Card from './Card'
+import End from "./End";
+
 function shuffleCards(data) {
   const shuffledCards=[...data, ...data]
     .sort(()=>Math.random()- 0.5)
@@ -13,6 +15,10 @@ function Game() {
   const [isMatched, setIsMatched] = useState([])
   const [clickOne, setClickOne]=useState(null)
   const [clickTwo, setClickTwo]=useState(null)
+  const [moves, setMoves]=useState(0)
+  const [showEnd, setShowEnd]=useState(false)
+  const [restart, setRestart]=useState(false)
+  const [isDisabled, setIsDisabled]=useState(false)
 
 
   useEffect(()=>
@@ -23,14 +29,16 @@ function Game() {
       setTiles(shuffleCards(data))
       
     });
-  }, [])
+  }, [restart])
 
   function handleClick(tile){
     clickOne?setClickTwo(tile):setClickOne(tile)
+    setMoves((moves)=>moves+1)
   }
 
   useEffect(()=>{
     if (clickOne && clickTwo){
+      setIsDisabled(true)
       if (clickOne.name === clickTwo.name){
         resetClicks()
         setIsMatched((prev)=>[...prev,clickOne.name])
@@ -43,15 +51,26 @@ function Game() {
   function resetClicks(){
     setClickOne(null)
     setClickTwo(null)
+    setIsDisabled(false)
   }
 
   useEffect(()=>{
     checkComplete()}, [isMatched])
 
   function checkComplete(){
-    if (isMatched.length===18){
-      console.log('win')
+    if (isMatched.length===1){
+      setShowEnd(!showEnd)
     }
+  }
+
+  function restartGame(){
+    setClickOne(null)
+    setClickTwo(null)
+    setIsMatched([])
+    setMoves(0)
+    setShowEnd(!showEnd)
+    setRestart(!restart)
+
   }
 
   return (
@@ -64,9 +83,12 @@ function Game() {
               tile={tile}
               onClick={handleClick}
               flipped={tile===clickOne||tile===clickTwo||isMatched.includes(tile.name)}
+              isDisabled={isDisabled}
             />})
           }
       </div>
+      <div className="moves">Moves: {moves}</div>
+      {showEnd?<End moves={moves} restartGame={restartGame}/>:null}
     </div>
   )
 }
