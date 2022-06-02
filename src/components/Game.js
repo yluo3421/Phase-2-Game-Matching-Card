@@ -9,7 +9,7 @@ function shuffleCards(data) {
   return shuffledCards
 }
 
-function Game() {
+function Game({ leaderId, bestMovesServer }) {
 
   const [tiles, setTiles]=useState([])
   const [isMatched, setIsMatched] = useState([])
@@ -19,7 +19,11 @@ function Game() {
   const [showEnd, setShowEnd]=useState(false)
   const [restart, setRestart]=useState(false)
   const [isDisabled, setIsDisabled]=useState(false)
+  const [beginning, setBeginning]=useState(true)
 
+  useEffect(()=>{
+    setTimeout(()=>setBeginning(!beginning), 3000)
+  }, [restart])
 
   useEffect(()=>
   {
@@ -43,7 +47,7 @@ function Game() {
         resetClicks()
         setIsMatched((prev)=>[...prev,clickOne.name])
       }else {
-        setTimeout(()=>resetClicks(),1000)
+        setTimeout(()=>resetClicks(),500)
       }
     }
   }, [clickOne, clickTwo])
@@ -58,8 +62,23 @@ function Game() {
     checkComplete()}, [isMatched])
 
   function checkComplete(){
+    const winMoves=moves/2
     if (isMatched.length===1){
       setShowEnd(!showEnd)
+      console.log("win moves before patch: " + winMoves)
+      if(bestMovesServer > winMoves) {
+        fetch(`http://localhost:3002/leader/${leaderId}`, {
+          method:"PATCH",
+          headers:{
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            moves: winMoves
+          }),
+        })
+        .then((r) => r.json())
+        .then(console.log("after patching"))
+      }
     }
   }
 
@@ -70,8 +89,9 @@ function Game() {
     setMoves(0)
     setShowEnd(!showEnd)
     setRestart(!restart)
-
+    setBeginning(!beginning)
   }
+
 
   return (
     <div className="gamePage">
@@ -82,7 +102,7 @@ function Game() {
               key={tile.id} 
               tile={tile}
               onClick={handleClick}
-              flipped={tile===clickOne||tile===clickTwo||isMatched.includes(tile.name)}
+              flipped={beginning||tile===clickOne||tile===clickTwo||isMatched.includes(tile.name)}
               isDisabled={isDisabled}
             />})
           }
