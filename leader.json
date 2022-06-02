@@ -1,10 +1,14 @@
 {
-    "leader": [
-        {
-            "id": 1,
-            "name":"try",
-            "moves":"50"
-        }
-    ]
-    
+  "leader": [
+    {
+      "id": 1,
+      "name": "try",
+      "moves": "50"
+    },
+    {
+      "name": "tryname",
+      "moves": 0,
+      "id": 2
+    }
+  ]
 }
