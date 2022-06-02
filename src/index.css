@@ -45,7 +45,6 @@ ol {
 
 img{
   max-width: 100%;
-  position: relative;
   max-height: 100%;
   margin:auto;
 }
@@ -53,4 +52,15 @@ img{
 .tile{
   max-height: 100%;
   margin:auto;
+  position:relative
 }
+
+.tile .front{
+  transform: rotateY(90deg);
+  position: absolute;
+}
+
+.flipped .front{
+  transform: rotateY(0deg);
+}
+
