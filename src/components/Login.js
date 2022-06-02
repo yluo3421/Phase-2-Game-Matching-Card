@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 
-function Login({setLeaderId, setBestMovesServer}) {
+function Login({ setUser }) {
   const history=useHistory();
   const [name, setName] = useState("");
   const[error, setError] = useState(false)
@@ -23,8 +23,8 @@ function Login({setLeaderId, setBestMovesServer}) {
       })
       .then((r)=>r.json())
       .then((data)=>{
-        setLeaderId(data.id)
-        setBestMovesServer(data.moves)
+        //setLeaderId(data.id)
+        setUser(data)
       })
       history.push("/Game")
   } 

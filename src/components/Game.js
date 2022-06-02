@@ -9,7 +9,7 @@ function shuffleCards(data) {
   return shuffledCards
 }
 
-function Game({ leaderId, bestMovesServer }) {
+function Game({ user }) {
 
   const [tiles, setTiles]=useState([])
   const [isMatched, setIsMatched] = useState([])
@@ -63,11 +63,12 @@ function Game({ leaderId, bestMovesServer }) {
 
   function checkComplete(){
     const winMoves=moves/2
-    if (isMatched.length===1){
+    if (isMatched.length===18){
       setShowEnd(!showEnd)
       console.log("win moves before patch: " + winMoves)
-      if(bestMovesServer > winMoves) {
-        fetch(`http://localhost:3002/leader/${leaderId}`, {
+      console.log("bestMovers on server" + user.moves)
+      if(user.moves > winMoves) {
+        fetch(`http://localhost:3002/leader/${user.id}`, {
           method:"PATCH",
           headers:{
             "Content-Type": "application/json",
@@ -107,7 +108,14 @@ function Game({ leaderId, bestMovesServer }) {
             />})
           }
       </div>
-      <div className="moves">Moves: {moves}</div>
+      <div className="moves">
+        <ul>
+          <li>Moves: {Math.round(moves/2)}</li>
+          <li>Username: {user.name}</li>
+          <li>Don't refresh page or you will lose your scores</li>
+        </ul>
+        
+      </div>
       {showEnd?<End moves={moves} restartGame={restartGame}/>:null}
     </div>
   )

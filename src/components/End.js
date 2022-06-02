@@ -1,10 +1,16 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
+
 function End({moves,restartGame}){
     const history=useHistory();
-    function handleClick(){
-        history.push("/LeaderBoard")}
+
+    function handleClick() {
+        history.push("/LeaderBoard")
+    }
+
+    
+
     return(
         <div id="myModal" className="modal">
             <div className="modal-content">

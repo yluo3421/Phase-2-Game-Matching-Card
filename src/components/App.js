@@ -6,17 +6,17 @@ import LeaderBoard from "./LeaderBoard";
 import Home from "./Home"
 
 function App(){
-    const [leaderId, setLeaderId]=useState(0);
-    const [bestMovesServer, setBestMovesServer] = useState(0);
+    const [user, setUser]=useState({});
+    //const [bestMovesServer, setBestMovesServer] = useState(0);
     
     return (
         <div>
             <Switch>
                 <Route exact path="/Login">
-                    <Login setLeaderId={setLeaderId} setBestMovesServer={setBestMovesServer} />
+                    <Login setUser={setUser} />
                 </Route>
                 <Route exact path="/Game">
-                    <Game leaderId={leaderId} bestMovesServer={bestMovesServer} />
+                    <Game user={user} />
                 </Route>
                 <Route exact path="/LeaderBoard">
                     <LeaderBoard />
