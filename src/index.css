@@ -34,21 +34,15 @@ ol {
   grid-template-rows: repeat(6, 1fr);
   justify-items:center;
   gap: 2rem;
-
-  
+  padding: 5%;
   width: 420px;
-
-  height: 500px;
+  height: 100%;
   perspective: 100%;
   max-width: 720px;
   justify-items: center;
   align-items: stretch;
   margin:auto;
-
   position:relative
-
-
-
 }
 
 img{
@@ -76,7 +70,7 @@ img{
   margin-left: auto;
   font-size: 40px;
   position: absolute;
-  bottom:40%;
+  bottom:20%;
 }
 
 .modal {

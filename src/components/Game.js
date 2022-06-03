@@ -9,7 +9,7 @@ function shuffleCards(data) {
   return shuffledCards
 }
 
-function Game() {
+function Game({ user }) {
 
   const [tiles, setTiles]=useState([])
   const [isMatched, setIsMatched] = useState([])
@@ -19,7 +19,11 @@ function Game() {
   const [showEnd, setShowEnd]=useState(false)
   const [restart, setRestart]=useState(false)
   const [isDisabled, setIsDisabled]=useState(false)
+  const [beginning, setBeginning]=useState(true)
 
+  useEffect(()=>{
+    setTimeout(()=>setBeginning(!beginning), 3000)
+  }, [restart])
 
   useEffect(()=>
   {
@@ -43,7 +47,7 @@ function Game() {
         resetClicks()
         setIsMatched((prev)=>[...prev,clickOne.name])
       }else {
-        setTimeout(()=>resetClicks(),1000)
+        setTimeout(()=>resetClicks(),500)
       }
     }
   }, [clickOne, clickTwo])
@@ -58,8 +62,24 @@ function Game() {
     checkComplete()}, [isMatched])
 
   function checkComplete(){
-    if (isMatched.length===1){
+    const winMoves=moves/2
+    if (isMatched.length===18){
       setShowEnd(!showEnd)
+      console.log("win moves before patch: " + winMoves)
+      console.log("bestMovers on server" + user.moves)
+      if(user.moves > winMoves) {
+        fetch(`http://localhost:3002/leader/${user.id}`, {
+          method:"PATCH",
+          headers:{
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            moves: winMoves
+          }),
+        })
+        .then((r) => r.json())
+        .then(console.log("after patching"))
+      }
     }
   }
 
@@ -70,8 +90,9 @@ function Game() {
     setMoves(0)
     setShowEnd(!showEnd)
     setRestart(!restart)
-
+    setBeginning(!beginning)
   }
+
 
   return (
     <div className="gamePage">
@@ -82,12 +103,19 @@ function Game() {
               key={tile.id} 
               tile={tile}
               onClick={handleClick}
-              flipped={tile===clickOne||tile===clickTwo||isMatched.includes(tile.name)}
+              flipped={beginning||tile===clickOne||tile===clickTwo||isMatched.includes(tile.name)}
               isDisabled={isDisabled}
             />})
           }
       </div>
-      <div className="moves">Moves: {moves}</div>
+      <div className="moves">
+        <ul>
+          <li>Moves: {Math.round(moves/2)}</li>
+          <li>Username: {user.name}</li>
+          <li>Don't refresh page or you will lose your scores</li>
+        </ul>
+        
+      </div>
       {showEnd?<End moves={moves} restartGame={restartGame}/>:null}
     </div>
   )
