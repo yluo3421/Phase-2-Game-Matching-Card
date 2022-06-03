@@ -13,16 +13,35 @@ code {
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 80px;
 }
 h2{
-  font-size: 30px;
+  font-size: 50px;
 }
 div{
   text-align: center;
 }
 li{
   font-size: 20px;
+}
+
+
+body {
+  background-image: url("https://github.com/kcwong395/Mahjong-Bingo/blob/master/img/background_front.png?raw=true");
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  height: 200%;
+}
+.homepageButton {
+  /* background-image: url("https://raw.githubusercontent.com/taksuyu/tile-art/1252f449a666ba628fc3a8472a3c6aa525740c88/bordered/dragwhite.svg"); */
+  width: 90px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 20px;
+
+}
+.homepageLi{
+  font-size: 30px;
 }
 ol {
   text-align: center;
@@ -45,11 +64,35 @@ ol {
   position:relative;
   padding-bottom: 8%;
 }
+.homepageBackground h1{
+  margin-top:13% ;
+  margin-bottom:1% ;
+}
+.leaderBoardValues{
+  font-size: 30px;
+  margin-top: 0%;
+}
+.username{
+  width: 500px;
+  height: 25px;
+  font-size: 30px;
+  text-align: center;
+}
+.submitButton{
+  width: 100px;
+  height: 30px;
+  font-size: 20px;
+}
 
+.homepageBackground h2{
+  margin-top: 1%;
+  margin-bottom:1% ;
+}
 .gamePage h1{
-  margin-top: .5%;
+  margin-top: 4%;
   margin-bottom: .5%;
-  font-size: 35px;
+  font-size: 40px;
+  color: white;
 }
 
 img{
@@ -69,6 +112,8 @@ img{
   transition: all ease-in 0.3s;
   position: absolute;
   transition-delay: .2s;
+  
+  
 }
 
 .flipped .front{
@@ -83,16 +128,22 @@ img{
 
 
 .flipped .back{
-  transform: rotateY(90deg);
+ transform: rotateY(90deg);
   transition-delay: 0s;
 } 
-
+#leaderBoard{
+  margin-bottom: 0%;
+  color:white
+}
 .moves{
   margin-left: auto;
   margin-bottom: 0%;
 }
 li{
   font-size: 14px;
+}
+.leaderBoardButton{
+  font-size:30px;
 }
 
 .modal {
@@ -119,5 +170,11 @@ li{
 .endButton{
   font-size:30px;
 }
+
+
+*{
+  font-family: 'Nanum Pen Script', cursive;
+}
+
 
 

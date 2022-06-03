@@ -43,10 +43,11 @@ function Login({ setUser }) {
         placeholder="Username"
         value={name}
         onChange={(e) => setName(e.target.value)} 
+        className="username"
         />
       </div>
       <p>{error? 'Username is required!' : ''}</p>
-      <input type="submit" value="Submit" />
+      <input className="submitButton" type="submit" value="Submit" />
     </form>
   );
 }

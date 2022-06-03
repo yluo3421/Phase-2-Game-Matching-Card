@@ -96,7 +96,7 @@ function Game({ user }) {
 
   return (
     <div className="gamePage">
-      <h1>Play Card Matching Game!</h1>
+      <h1>Play Mahjong Matching Game!</h1>
       <div className="moves">
           <li>Username: {user.name}</li>
           <li>Moves: {Math.round(moves/2)}</li>

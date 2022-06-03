@@ -1,59 +1,23 @@
 {
   "leader": [
     {
-      "id": 1,
-      "name": "try",
-      "moves": 9999
-    },
-    {
-      "name": "lyly",
-      "moves": 90,
-      "id": 12
-    },
-    {
-      "name": "jljlj",
-      "moves": 9999,
-      "id": 13
-    },
-    {
-      "name": "Robert ",
-      "moves": 9999,
-      "id": 34
-    },
-    {
-      "name": "saint",
-      "moves": 64,
-      "id": 35
-    },
-    {
-      "name": "yluo",
-      "moves": 9999,
-      "id": 36
-    },
-    {
-      "name": "try",
-      "moves": 58,
-      "id": 37
-    },
-    {
-      "name": "try 2",
-      "moves": 1,
-      "id": 38
-    },
-    {
-      "name": "try 4",
-      "moves": 1,
+      "name": "yeming",
+      "moves": 40,
       "id": 39
     },
     {
-      "name": "William",
-      "moves": 9999,
+      "name": "James",
+      "moves": 45,
       "id": 40
     },
     {
-      "name": "Tashi",
-      "moves": 9999,
+      "name": "saint",
+      "moves": 35,
       "id": 41
+    },     {
+      "name": "mohammad",
+      "moves": 61,
+      "id": 42
     }
   ]
 }
