@@ -49,6 +49,11 @@
       "name": "William",
       "moves": 9999,
       "id": 40
+    },
+    {
+      "name": "Tashi",
+      "moves": 9999,
+      "id": 41
     }
   ]
 }

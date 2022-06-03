@@ -33,16 +33,23 @@ ol {
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
   justify-items:center;
-  gap: 2rem;
-  padding: 5%;
+  grid-gap: 2%;
   width: 420px;
+  padding-top: 1%;
   height: 100%;
   perspective: 100%;
-  max-width: 720px;
+  max-width: 50%;
   justify-items: center;
   align-items: stretch;
   margin:auto;
-  position:relative
+  position:relative;
+  padding-bottom: 8%;
+}
+
+.gamePage h1{
+  margin-top: .5%;
+  margin-bottom: .5%;
+  font-size: 35px;
 }
 
 img{
@@ -59,18 +66,33 @@ img{
 
 .tile .front{
   transform: rotateY(90deg);
+  transition: all ease-in 0.3s;
   position: absolute;
+  transition-delay: .2s;
 }
 
 .flipped .front{
   transform: rotateY(0deg);
+  transition-delay: .2s;
 }
+
+.tile .back{
+  transition: all ease-in 0.3s;
+  transition-delay: .2s;
+}
+
+
+.flipped .back{
+  transform: rotateY(90deg);
+  transition-delay: 0s;
+} 
 
 .moves{
   margin-left: auto;
-  font-size: 40px;
-  position: absolute;
-  bottom:20%;
+  margin-bottom: 0%;
+}
+li{
+  font-size: 14px;
 }
 
 .modal {
