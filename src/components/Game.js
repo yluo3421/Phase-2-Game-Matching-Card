@@ -63,7 +63,7 @@ function Game({ user }) {
 
   function checkComplete(){
     const winMoves=moves/2
-    if (isMatched.length===18){
+    if (isMatched.length===15){
       setShowEnd(!showEnd)
       console.log("win moves before patch: " + winMoves)
       console.log("bestMovers on server" + user.moves)
@@ -96,7 +96,12 @@ function Game({ user }) {
 
   return (
     <div className="gamePage">
-      <h1>Play Card Matching Game!</h1>
+      <h1>Play Mahjong Matching Game!</h1>
+      <div className="moves">
+          <li>Username: {user.name}</li>
+          <li>Moves: {Math.round(moves/2)}</li>
+          <li>Don't refresh page or you will lose your scores</li>
+      </div>
       <div className='container'>
           {tiles.map((tile)=>{
             return <Card 
@@ -107,14 +112,6 @@ function Game({ user }) {
               isDisabled={isDisabled}
             />})
           }
-      </div>
-      <div className="moves">
-        <ul>
-          <li>Moves: {Math.round(moves/2)}</li>
-          <li>Username: {user.name}</li>
-          <li>Don't refresh page or you will lose your scores</li>
-        </ul>
-        
       </div>
       {showEnd?<End moves={moves} restartGame={restartGame}/>:null}
     </div>

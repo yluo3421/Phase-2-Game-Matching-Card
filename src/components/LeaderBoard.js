@@ -1,7 +1,13 @@
 import React, {useEffect, useState} from "react";
+import { useHistory } from "react-router-dom";
 
 function LeaderBoard() {
   const [leader, setLeader]=useState([])
+  const history=useHistory();
+
+  function handleClick() {
+      history.push("/Login")
+  }
 
   useEffect(()=>
   {
@@ -27,10 +33,11 @@ function LeaderBoard() {
        {leader.map((person)=>{
 
          return (
-            <li key={person.id}>Username: {person.name}   Moves: {person.moves}</li>
+            <li className="leaderBoardValues" key={person.id}>Username: {person.name}   Moves: {person.moves}</li>
          )
        })}
        </ol>
+       <button className="leaderBoardButton" onClick={()=>handleClick()}>Play Again!</button>
 
      </div>
      )

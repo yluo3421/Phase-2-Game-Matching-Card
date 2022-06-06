@@ -13,16 +13,35 @@ code {
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 80px;
 }
 h2{
-  font-size: 30px;
+  font-size: 50px;
 }
 div{
   text-align: center;
 }
 li{
   font-size: 20px;
+}
+
+
+body {
+  background-image: url("https://github.com/kcwong395/Mahjong-Bingo/blob/master/img/background_front.png?raw=true");
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  height: 200%;
+}
+.homepageButton {
+  /* background-image: url("https://raw.githubusercontent.com/taksuyu/tile-art/1252f449a666ba628fc3a8472a3c6aa525740c88/bordered/dragwhite.svg"); */
+  width: 90px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 20px;
+
+}
+.homepageLi{
+  font-size: 30px;
 }
 ol {
   text-align: center;
@@ -33,16 +52,47 @@ ol {
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
   justify-items:center;
-  gap: 2rem;
-  padding: 5%;
+  grid-gap: 2%;
   width: 420px;
+  padding-top: 1%;
   height: 100%;
   perspective: 100%;
-  max-width: 720px;
+  max-width: 50%;
   justify-items: center;
   align-items: stretch;
   margin:auto;
-  position:relative
+  position:relative;
+  padding-bottom: 8%;
+}
+.homepageBackground h1{
+  margin-top:13% ;
+  margin-bottom:1% ;
+}
+.leaderBoardValues{
+  font-size: 30px;
+  margin-top: 0%;
+}
+.username{
+  width: 500px;
+  height: 25px;
+  font-size: 30px;
+  text-align: center;
+}
+.submitButton{
+  width: 100px;
+  height: 30px;
+  font-size: 20px;
+}
+
+.homepageBackground h2{
+  margin-top: 1%;
+  margin-bottom:1% ;
+}
+.gamePage h1{
+  margin-top: 4%;
+  margin-bottom: .5%;
+  font-size: 40px;
+  color: white;
 }
 
 img{
@@ -59,18 +109,41 @@ img{
 
 .tile .front{
   transform: rotateY(90deg);
+  transition: all ease-in 0.3s;
   position: absolute;
+  transition-delay: .2s;
+  
+  
 }
 
 .flipped .front{
   transform: rotateY(0deg);
+  transition-delay: .2s;
 }
 
+.tile .back{
+  transition: all ease-in 0.3s;
+  transition-delay: .2s;
+}
+
+
+.flipped .back{
+ transform: rotateY(90deg);
+  transition-delay: 0s;
+} 
+#leaderBoard{
+  margin-bottom: 0%;
+  color:white
+}
 .moves{
   margin-left: auto;
-  font-size: 40px;
-  position: absolute;
-  bottom:20%;
+  margin-bottom: 0%;
+}
+li{
+  font-size: 14px;
+}
+.leaderBoardButton{
+  font-size:30px;
 }
 
 .modal {
@@ -97,5 +170,11 @@ img{
 .endButton{
   font-size:30px;
 }
+
+
+*{
+  font-family: 'Nanum Pen Script', cursive;
+}
+
 
 

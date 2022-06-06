@@ -10,7 +10,7 @@ function App(){
     //const [bestMovesServer, setBestMovesServer] = useState(0);
     
     return (
-        <div>
+        <div className="App">
             <Switch>
                 <Route exact path="/Login">
                     <Login setUser={setUser} />

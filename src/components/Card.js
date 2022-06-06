@@ -11,7 +11,13 @@ function Card({tile, onClick, flipped, isDisabled}){
     return (
     <div className="tile" >
         <div className={flipped ? "flipped" : ""}>
-            <img className="front" alt="tile front" src= {tile.image}/> 
+            <img 
+                className="front" 
+                alt="tile front" 
+                src= {tile.image}
+            /> 
+            
+            
             <img className="back" alt="tile back" src= {backTile} onClick={handleClick}/>
         </div>
     </div>
