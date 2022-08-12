@@ -29,7 +29,7 @@ li{
 body {
   background-image: url("https://github.com/kcwong395/Mahjong-Bingo/blob/master/img/background_front.png?raw=true");
   background-repeat: no-repeat;
-  /* background-size: cover; */
+  background-size: cover;
   height: 200%;
 }
 .homepageButton {

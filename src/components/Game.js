@@ -11,15 +11,16 @@ function shuffleCards(data) {
 
 function Game({ user }) {
 
-  const [tiles, setTiles]=useState([])
+  const [tiles, setTiles] = useState([])
   const [isMatched, setIsMatched] = useState([])
-  const [clickOne, setClickOne]=useState(null)
-  const [clickTwo, setClickTwo]=useState(null)
-  const [moves, setMoves]=useState(0)
-  const [showEnd, setShowEnd]=useState(false)
-  const [restart, setRestart]=useState(false)
-  const [isDisabled, setIsDisabled]=useState(false)
-  const [beginning, setBeginning]=useState(true)
+  const [clickOne, setClickOne] = useState(null)
+  const [clickTwo, setClickTwo] = useState(null)
+  const [moves, setMoves] = useState(0)
+  const [showEnd, setShowEnd] = useState(false)
+  const [restart, setRestart] = useState(false)
+  const [isDisabled, setIsDisabled] = useState(false)
+  const [beginning, setBeginning] = useState(true)
+  //const [level, setLevel] = useState({"Hard":30})
 
   useEffect(()=>{
     setTimeout(()=>setBeginning(!beginning), 3000)
@@ -34,6 +35,10 @@ function Game({ user }) {
       
     });
   }, [restart])
+  // console.log(level["Hard"])
+  // function handleLevel(e) {
+  //   console.log(e.target.value)
+  // }
 
   function handleClick(tile){
     clickOne?setClickTwo(tile):setClickOne(tile)
@@ -63,7 +68,7 @@ function Game({ user }) {
 
   function checkComplete(){
     const winMoves=moves/2
-    if (isMatched.length===15){
+    if (isMatched.length===5){
       setShowEnd(!showEnd)
       console.log("win moves before patch: " + winMoves)
       console.log("bestMovers on server" + user.moves)
@@ -101,6 +106,9 @@ function Game({ user }) {
           <li>Username: {user.name}</li>
           <li>Moves: {Math.round(moves/2)}</li>
           <li>Don't refresh page or you will lose your scores</li>
+          {/* <button onClick={handleLevel}>Easy</button>
+          <button onClick={handleLevel}>Medium</button>
+          <button onClick={handleLevel}>Hard</button> */}
       </div>
       <div className='container'>
           {tiles.map((tile)=>{
