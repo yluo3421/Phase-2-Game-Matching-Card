@@ -9,10 +9,11 @@ The website is still one page but has 3 client-side routes using React Router. B
 [![webpage_gif_001](pictures/Phase%202%20project%20demo%20Mahjong%20Matching%20Game%20website%20220619.gif)]
 
 # To start the website
-npm run server
-json-server --watch leader.json -p 3002
-npm start
 
+notes for future use  <br />
+make sure you install by: npm install -g concurrently  <br />
+to run multiple servers: concurrently "npm:watch-db" "npm:watch-leader" "npm:watch-whatever"  <br />
+npm start  <br />
 
 
 
