@@ -23,4 +23,8 @@ $ npm:watch-whatever
 $ npm start
 ```
 
+Future Feature: <br />
+Make this website with account connected to major websites (gmail, facebook)
+Animation smooth
+
 
