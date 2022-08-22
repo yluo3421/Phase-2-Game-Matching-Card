@@ -7,6 +7,7 @@ The website is still one page but has 3 client-side routes using React Router. B
 The demo below are set to lower number of tiles matched to make the video shorter.
 
 
+
 [![webpage_gif_001](pictures/Phase%202%20project%20demo%20Mahjong%20Matching%20Game%20website%20220619.gif)]
 
 # To start the website locally
