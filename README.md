@@ -6,7 +6,7 @@ After finishing the webpage for introduction of algorithm, I decided to do a web
 The website is still one page but has 3 client-side routes using React Router. Buttons are used to help user navigate betwwen homepage, game, and leader board. Beyond that, we use a json-server to create a RESTful API for our backend and make both a GET and a POST request to the json server. Also we use a form to enable post request. <br />
 The demo below are set to lower number of tiles matched to make the video shorter.
 
-
+ 
 
 [![webpage_gif_001](pictures/Phase%202%20project%20demo%20Mahjong%20Matching%20Game%20website%20220619.gif)]
 
